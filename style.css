@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.backgraund{
+    height: 100vh;
+    background-image: url(indir.jpg);
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.durumbox {
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    text-align: center;
+    height: 70vh;
+    background-color: rgba(93, 94, 102, 0.5);
+    border-radius: 15px;
+   
+}
+
+h1 {
+    margin-top: 1rem;
+    font-size: 3rem;
+    color:white;
+   
+}
+
+.girdi {
+    margin-top: 2rem;
+    
+}
+ .girdi input {
+    background-color: rgb(225, 213, 213);
+    height: 3rem;
+    border-radius: 15px;
+    width: 25vw;
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: 20px;
+    margin: 20px;
+    
+ }
+
+ .girdi button {
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 15px;
+    border: none;
+    background-color: coral;
+    margin: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+ }
+
+ .girdi button:hover {
+    box-shadow: 0px 0px 30px #dacfcf;
+ }
+
+ .girdi input:hover {
+    box-shadow: 0px 0px 30px #6a4646;  
+ }
