@@ -1,6 +1,8 @@
 const apiKey = "5ed635c2454ab17fa31effbe499af547";
 const mainDiv = document.querySelector(".çıktı");
 const input = document.querySelector("input")
+const search = document.querySelector(".search")
+
 
 
 //datayı çek
@@ -27,8 +29,8 @@ const getData =  (şehir) => {
 const renderError = () =>{
     
     mainDiv.innerHTML += `
-    <h1>ERROR İN SYSTEM </h1>
-    <img src="404.png alt="" /> `;
+    <h1>Please!! Write a city name</h1>
+    `;
 
 }
 
@@ -38,9 +40,9 @@ const renderCity = (data) => {
     const { name, weather, main: { temp }, wind: { speed }, main: { humidity } } = data
 
     mainDiv.innerHTML +=  `
-    <div class="card">
+    <div class="card" >
       <div class="card-text">
-            <p class="name">Weather in ${name}</p>
+            <p class="name">in ${name}</p>
       </div>
       <div class="card-text">
         <p class="temp">${Math.floor(temp) - 273}°C </p>
@@ -55,4 +57,9 @@ const renderCity = (data) => {
 
 };
 
-getData("london");
+search.addEventListener("click", ()=>{
+    //mainDiv.parentElement.previousElementSibling.children[2].remove();
+    console.log(input.value)
+    getData(input.value) 
+    input.value = ""
+ })
