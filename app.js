@@ -48,9 +48,9 @@ const renderCity = (data) => {
         <p class="temp">${Math.floor(temp) - 273}°C </p>
       </div>
       <div class="card-text">
+        <i class="fa-solid fa-cloud fa-2x"></i>
         <p class="status">${Object.values(weather)[0].description}</p>
         <p class="status">Humidity:% ${humidity}</p>
-        <p class="status">Wind Speed:${speed}</p>
       </div>
       <button type="button" class="dlt">X</button>
     </div> `
@@ -69,6 +69,15 @@ mainDiv.addEventListener("click", (e) =>{
     e.target.parentElement.remove()
   }
 })
-  
- 
+
+window.onload = function () {
+  input.focus()
+}
+
+input.addEventListener("keydown", (e) => {
+  if (e.code === "Enter") {
+      search.click()
+      input.value=""
+  }
+});
 
