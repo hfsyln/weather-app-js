@@ -66,7 +66,7 @@ search.addEventListener("click", ()=>{
 
 mainDiv.addEventListener("click", (e) =>{
   if(e.target.className == "dlt"){
-    e.target.parentElement.parentElement.remove()
+    e.target.parentElement.remove()
   }
 })
   

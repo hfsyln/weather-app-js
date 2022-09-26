@@ -120,38 +120,70 @@ h2 {
 
  @media screen and (min-width: 520px) and (max-width: 870px){
     .durumbox {
-    top: 5%;
-    left: 20%;
-    text-align: center;
-    height: 95%;
-    width: 60%;
-    background-color: rgba(93, 94, 102, 0.5);
-    border-radius: 15px;
-   
-}
+        flex-wrap: wrap;
+        overflow: auto;
+        height: 88%;
+        width: 60%;
+    }
+    .card-text {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+        font-size: 1.3rem;
+        color: antiquewhite;
+     }
    .çıktı {
     display: flex;
     flex-direction: column;
-    gap: 5%;
-    height: 60%;
+    gap: 2%;
+    height: 70%;
     align-items: center;
  }
  .card {
     width: 60%;
-    height: 90%;
-    background-color: rgba(236, 139, 12, 0.3);
-    box-shadow: 0px 0px 30px #bfa1a1;
+    height: 70%;
+  
  }
- .girdi input {
-    background-color: rgb(225, 213, 213);
-    height: 3rem;
-    border-radius: 15px;
-    width: 50%;
-    border: none;
-    padding: 10px;
-    outline: none;
-    font-size: 20px;
-    margin: 20px;
+ .girdi {
+    margin-top: 1rem;
+    width: 100%;
     
+}
+ .girdi input {
+    margin: 20px;
  }
+ .dlt {
+    margin-top: 10px;
+    margin: auto;
+    font-size: 1.1rem; 
+ }
+ }
+ @media screen and (max-width: 520px) {
+    h2 {
+        margin: 0.5rem;  
+    }
+    .girdi input {
+        margin: 10px;  
+     }
+     .çıktı {
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+        height: 60%;
+        align-items: center;
+     }
+     .card {
+        width: 80%;
+        height: 85%;
+        
+     }
+     .durumbox {
+        flex-wrap: wrap;
+        overflow: auto;
+        height: 88%;
+        width: 60%;
+       
+    }
  }
