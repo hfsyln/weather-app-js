@@ -42,7 +42,7 @@ const renderCity = (data) => {
     mainDiv.innerHTML +=  `
     <div class="card" >
       <div class="card-text">
-            <p class="name">in ${name}</p>
+            <p class="name">${name}</p>
       </div>
       <div class="card-text">
         <p class="temp">${Math.floor(temp) - 273}°C </p>
@@ -51,9 +51,10 @@ const renderCity = (data) => {
         <p class="status">${Object.values(weather)[0].description}</p>
         <p class="status">Humidity:% ${humidity}</p>
         <p class="status">Wind Speed:${speed}</p>
+        <button type="button" class="delete">Closed</button>
       </div>
     
-    </div>`
+    </div> `
 
 };
 
