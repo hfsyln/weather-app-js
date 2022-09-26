@@ -2,8 +2,8 @@ const apiKey = "5ed635c2454ab17fa31effbe499af547";
 const mainDiv = document.querySelector(".çıktı");
 const input = document.querySelector("input")
 const search = document.querySelector(".search")
-
-
+const dlt = document.querySelector(".delete")
+const card = document.querySelector(".card")
 
 //datayı çek
 const getData =  (şehir) => {
@@ -51,9 +51,8 @@ const renderCity = (data) => {
         <p class="status">${Object.values(weather)[0].description}</p>
         <p class="status">Humidity:% ${humidity}</p>
         <p class="status">Wind Speed:${speed}</p>
-        <button type="button" class="delete">Closed</button>
       </div>
-    
+      <button type="button" class="dlt">X</button>
     </div> `
 
 };
@@ -64,3 +63,12 @@ search.addEventListener("click", ()=>{
     getData(input.value) 
     input.value = ""
  })
+
+mainDiv.addEventListener("click", (e) =>{
+  if(e.target.className == "dlt"){
+    e.target.parentElement.parentElement.remove()
+  }
+})
+  
+ 
+
