@@ -46,28 +46,28 @@ const renderCity = (data) => {
     mainDiv.innerHTML += ""
     alert ("ikikez aynı girişi yapmayınız");  
   
+    }else {
+      if (content <=3 ){
+      mainDiv.innerHTML +=  `
+      <div class="card" >
+        <div class="card-text">
+              <p class="name">${name}</p>
+        </div>
+        <div class="card-text">
+          <p class="temp">${Math.floor(temp) - 273}°C </p>
+        </div>
+        <div class="card-text">
+          <i class="fa-solid fa-cloud fa-2x"></i>
+          <p class="status">${Object.values(weather)[0].description}</p>
+          <p class="status">Humidity:% ${humidity}</p>
+        </div>
+        <button type="button" class="dlt">X</button>
+      </div> `
+      content += 1;
+    }else if(content > 3){
+      alert("3 den fazla giriş yapmayınız")
     }
-    if (content <=3 ){
-    mainDiv.innerHTML +=  `
-    <div class="card" >
-      <div class="card-text">
-            <p class="name">${name}</p>
-      </div>
-      <div class="card-text">
-        <p class="temp">${Math.floor(temp) - 273}°C </p>
-      </div>
-      <div class="card-text">
-        <i class="fa-solid fa-cloud fa-2x"></i>
-        <p class="status">${Object.values(weather)[0].description}</p>
-        <p class="status">Humidity:% ${humidity}</p>
-      </div>
-      <button type="button" class="dlt">X</button>
-    </div> `
-    content += 1;
-  }else if(content > 3){
-    alert("3 den fazla giriş yapmayınız")
   }
-  
   citys.push(name.toLowerCase())
   console.log(citys)
 };
