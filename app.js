@@ -4,7 +4,7 @@ const input = document.querySelector("input")
 const search = document.querySelector(".search")
 const dlt = document.querySelector(".delete")
 const card = document.querySelector(".card")
-
+let citys = [];
 //datayı çek
 const getData =  (şehir) => {
     
@@ -38,7 +38,10 @@ const renderError = () =>{
 const renderCity = (data) => {
     console.log(data)
     const { name, weather, main: { temp }, wind: { speed }, main: { humidity } } = data
-
+  if(citys.includes(name.toLowerCase())){
+    mainDiv.innerHTML += ""
+    alert ("ikikez aynı girişi yapmayınız");  
+  }else  {
     mainDiv.innerHTML +=  `
     <div class="card" >
       <div class="card-text">
@@ -54,7 +57,9 @@ const renderCity = (data) => {
       </div>
       <button type="button" class="dlt">X</button>
     </div> `
-
+  }
+  citys.push(name.toLowerCase())
+  console.log(citys)
 };
 
 search.addEventListener("click", ()=>{
