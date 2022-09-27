@@ -5,6 +5,8 @@ const search = document.querySelector(".search")
 const dlt = document.querySelector(".delete")
 const card = document.querySelector(".card")
 let citys = [];
+let content = 0
+
 //datayı çek
 const getData =  (şehir) => {
     
@@ -14,8 +16,11 @@ const getData =  (şehir) => {
     
     .then((res) =>{
         if(!res.ok){
-            renderError(`sorun oluşturan bir durum var: ${res.statu}`)
-            throw new Error();
+            
+          renderError(` ${res.statu}`)
+           throw new Error(); ///ister tanımlanan hataya git 
+           //ister direk burda yap
+           //alert("hata")
         }
     return res.json();
     })
@@ -25,23 +30,24 @@ const getData =  (şehir) => {
     
 }; 
 
-//hata durumunu tanımla
+//hata durumunu tanımla yukardan buraya gel bunu
 const renderError = () =>{
     
-    mainDiv.innerHTML += `
-    <h1>Please!! Write a city name</h1>
-    `;
-
+  alert("Please!! Write a city name")
+     
 }
 
 //hata olmazsa durumunu yaz
 const renderCity = (data) => {
     console.log(data)
     const { name, weather, main: { temp }, wind: { speed }, main: { humidity } } = data
-  if(citys.includes(name.toLowerCase())){
+  
+    if(citys.includes(name.toLowerCase())){
     mainDiv.innerHTML += ""
     alert ("ikikez aynı girişi yapmayınız");  
-  }else  {
+  
+    }
+    if (content <=3 ){
     mainDiv.innerHTML +=  `
     <div class="card" >
       <div class="card-text">
@@ -57,7 +63,11 @@ const renderCity = (data) => {
       </div>
       <button type="button" class="dlt">X</button>
     </div> `
+    content += 1;
+  }else if(content > 3){
+    alert("3 den fazla giriş yapmayınız")
   }
+  
   citys.push(name.toLowerCase())
   console.log(citys)
 };
@@ -86,3 +96,6 @@ input.addEventListener("keydown", (e) => {
   }
 });
 
+//hatalar için ayrı bir conteiner oluşturup hataları buraya yazıp setTimeOut ile 
+//belli süre sonra koybalması sağlanabilir (hata olursa conteiner.innerhtml = `fesatgrdy`
+//setTimeOut kullanımı ile süre ver ve içerisinde container.innerHtml = ""(boşluk))
